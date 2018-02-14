@@ -1,0 +1,67 @@
+@background-color: grey;
+@pcolor: black;
+@primary-color: yellow;
+
+@secondary-color: purple;
+
+
+// Text color Mixin
+.text-color(@a) when (lightness(@a) >= 50%)
+{
+    color:"black"l
+}
+
+.text-color(@a) when (lightness(@a) < 50%)
+{
+    color:"black";
+}
+
+body{
+    background-color: @background-color;
+}
+
+h1, h3{
+    .bordered
+}
+
+p {
+    color: @pcolor;
+}
+
+.btn
+{
+    background: @primary-color;
+    border: 0;
+
+    .border-radius(10px;);
+}
+
+ul#menu{
+    list-style: none;
+
+background-color: darken(@secondary-color, 70%);
+
+    li{
+        padding: 10px 0;
+        a{
+            color: @secondary-color;
+            text-decoration: none;
+            &:hover{
+                color: black;
+            }
+        }
+    }
+}
+
+
+
+.border-radius(@radius)
+{
+    border-radius: @radius;
+}
+
+.bordered
+{
+    border-top: dotted 1px #000;
+    border-bottom: solid 2px #000;
+}
